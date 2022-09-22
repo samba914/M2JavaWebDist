@@ -1,7 +1,10 @@
-package miagefi.tp;
+package miagefi.tp.api;
 
 
 import lombok.AllArgsConstructor;
+import miagefi.tp.model.Book;
+import miagefi.tp.model.Student;
+import miagefi.tp.repositoty.StudentEntityRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +13,7 @@ import java.util.Optional;
 @RestController
 @AllArgsConstructor
 public class StudentApi {
-    private final StudentDbRepository studentRepo;
+    private final StudentEntityRepository studentRepo;
 
     @GetMapping("students")
     public List<Student> getAll(){
@@ -63,6 +66,8 @@ public class StudentApi {
     public void deleteStudent(@RequestBody Student st){
         studentRepo.delete(st);
     }
+
+
 
 
 
