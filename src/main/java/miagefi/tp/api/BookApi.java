@@ -32,17 +32,18 @@ public class BookApi {
         return bookRepo.save(book);
     }
 
-   /* @PutMapping("books/updatestudentbooklist")
+   @PutMapping("books/updatestudentbooklist")
     public Student updateBookList(@RequestParam String firstname, @RequestParam String lastname, @RequestBody List<Book> listBook){
         Optional<Student> st = studentRepo.findByFirstNameAndLastName(firstname,lastname);
         if(st.isPresent()){
             st.get().setBooks(listBook);
-            listBook.forEach(b->b.setStudent(st.get()));
-            bookRepo.saveAll(listBook);
+            //on essaye de mettre a jour les books pour renseigner leur attribut student
+            //listBook.forEach(b->b.setStudent(st.get()));
+          //  bookRepo.saveAll(listBook);
         }
         return studentRepo.save(st.orElse(null));
 
-    }*/
+    }
 
 
 
